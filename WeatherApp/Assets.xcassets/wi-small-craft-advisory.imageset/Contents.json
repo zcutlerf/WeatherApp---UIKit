@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "wi-small-craft-advisory.svg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

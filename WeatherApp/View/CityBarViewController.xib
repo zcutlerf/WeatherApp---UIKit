@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CityBarViewController" customModule="WeatherApp" customModuleProvider="target">
+            <connections>
+                <outlet property="cityChangeImageView" destination="MmM-bC-gfp" id="hUG-7c-k2b"/>
+                <outlet property="cityNameLabel" destination="px3-kR-TNK" id="aep-JJ-Jhw"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="128"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="New York, NY" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="px3-kR-TNK">
+                    <rect key="frame" x="20" y="44" width="302" height="64"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="64" id="cq2-Fa-mTL"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="25"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="MmM-bC-gfp">
+                    <rect key="frame" x="330" y="44" width="64" height="64"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="64" id="1lQ-eS-K52"/>
+                        <constraint firstAttribute="height" constant="64" id="oF9-SU-BKk"/>
+                    </constraints>
+                </imageView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="MmM-bC-gfp" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="B5j-5w-qLz"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="MmM-bC-gfp" secondAttribute="trailing" constant="20" id="b4x-em-cIx"/>
+                <constraint firstItem="px3-kR-TNK" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="n8e-Ao-O1J"/>
+                <constraint firstItem="MmM-bC-gfp" firstAttribute="leading" secondItem="px3-kR-TNK" secondAttribute="trailing" constant="8" symbolic="YES" id="nYr-SV-KfM"/>
+                <constraint firstItem="px3-kR-TNK" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="ntw-mV-YBn"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="-178.2608695652174" y="-248.4375"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

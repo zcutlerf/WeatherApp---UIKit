@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "wi-gale-warning.svg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

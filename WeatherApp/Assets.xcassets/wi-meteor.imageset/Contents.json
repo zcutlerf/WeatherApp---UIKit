@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "wi-meteor.svg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

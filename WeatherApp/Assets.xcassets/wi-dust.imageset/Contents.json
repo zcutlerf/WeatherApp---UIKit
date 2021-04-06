@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "wi-dust.svg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
