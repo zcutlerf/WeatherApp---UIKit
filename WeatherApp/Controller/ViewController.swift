@@ -98,16 +98,18 @@ class ViewController: UIViewController {
     func updateWeather(){
         cityBarVC.cityNameLabel.text = location?.city
         
-        currentWeatherVC.currentWeatherTemperature.text = "\(weather?.currentTemp?.description ?? "0") º F"
-        currentWeatherVC.currentWeatherLow.text = "Low: \(weather?.low[0].description ?? "0") º F"
-        currentWeatherVC.currentWeatherHigh.text = "High: \(weather?.high[0].description ?? "0") º F"
+        currentWeatherVC.currentWeatherTemperature.text = "\(numberAsString(num: weather?.currentTemp ?? 0)) º F"
+        currentWeatherVC.currentWeatherLow.text = "Low: \(numberAsString(num: weather?.low[0] ?? 0)) º F"
+        currentWeatherVC.currentWeatherHigh.text = "High: \(numberAsString(num: weather?.high[0] ?? 0)) º F"
         currentWeatherVC.currentWeatherDescription.text = weather?.description_current
         
-        print(weather?.iconID_current ?? "no weather description")
+        //print(weather?.iconID_current ?? "no weather description")
         
         let newSymbol = Symbols.init()
-        let newWeather = newSymbol.convertSymbol(name: weather?.iconID_current ?? "wi-day-sunny")
+        let newWeather = newSymbol.convertSymbol(name: weather?.iconID_current ?? "wi-day-sunny", isItDaytime: weather?.isItDaytime ?? true)
         currentWeatherVC.currentWeatherImageView.image = newWeather
+        
+        futureWeatherVC.futureWeatherCollectionView.reloadData()
     }
     
     //switch between Fahrenheit and Celsius

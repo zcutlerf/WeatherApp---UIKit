@@ -9,16 +9,23 @@ import UIKit
 
 class FutureWeatherCollectionViewCell: UICollectionViewCell {
     
-
+    @IBOutlet weak var dayLabel: UILabel!
+    
+    @IBOutlet weak var weatherImageView: UIImageView!
+    
+    @IBOutlet weak var weatherDescription: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
         self.backgroundColor = .clear
         
-        /*dayLabel.text = "Mon"
+        dayLabel.textColor = .white
+        weatherDescription.textColor = .white
+        
+        dayLabel.text = "Mon"
         weatherImageView.image = UIImage(named: "wi-day-sunny")
-        weatherDescription.text = "Clear"*/
+        weatherDescription.text = "0/0"
         
     }
 

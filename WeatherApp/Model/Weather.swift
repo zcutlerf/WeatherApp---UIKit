@@ -20,11 +20,18 @@ class Weather: Mappable {
     var high: [Float]
     var iconID: [String]
     
+    var isItDaytime: Bool
+    
+    var unixDayTime: Int?
+    var swiftDate: Date?
+    
     
     required init?(map: Map) {
         self.low = [0,0,0,0,0,0,0,0]
         self.high = [0,0,0,0,0,0,0,0]
         self.iconID = ["","","","","","","",""]
+        
+        self.isItDaytime = true
     }
     
     //use this to filter JSON (from postman outline) into spots
@@ -34,6 +41,16 @@ class Weather: Mappable {
         feelsLike       <- map["current.feels_like"]
         iconID_current  <- map["current.weather.0.description"]
         description_current  <- map["current.weather.0.main"]
+        
+        unixDayTime     <- map["daily.0.dt"]
+        unixDayTime = (unixDayTime ?? 0) + (timezoneOffset ?? 0)
+        swiftDate = Date(timeIntervalSince1970: TimeInterval.init(unixDayTime ?? 0))
+        
+        var iconString = ""
+        iconString <- map["current.weather.0.icon"]
+        if(iconString.contains("n")){
+            isItDaytime = false
+        }
         
         low[0]             <- map["daily.0.temp.min"]
         high[0]            <- map["daily.0.temp.max"]

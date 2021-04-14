@@ -42,46 +42,18 @@ class FutureWeatherViewController: UIViewController, UICollectionViewDelegate, U
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "futureWeatherCell", for: indexPath) as! FutureWeatherCollectionViewCell
         
-        /*
-        cell.dayLabel.text = "Mon"
-        //cell.dayLabel.textAlignment = .center
-        //cell.dayLabel.font = UIFont.init(name: "Avenir Next Demi Bold", size: 19)
-        cell.dayLabel.textColor = .white
+        let dateFormatter = DateFormatter()
+        var date = weather?.swiftDate ?? Date(timeIntervalSince1970: TimeInterval.init())
+        date.addTimeInterval(TimeInterval.init(indexPath.row * 86400))
+        dateFormatter.dateFormat = "EEE"
+        
+        cell.dayLabel.text = dateFormatter.string(from: date)
         
         let newSymbol = Symbols.init()
-        let newWeather = newSymbol.convertSymbol(name: weather?.iconID[indexPath.row] ?? "")
+        let newWeather = newSymbol.convertSymbol(name: weather?.iconID[indexPath.row] ?? "", isItDaytime: true)
         cell.weatherImageView.image = newWeather
         
-        cell.weatherDescription.text = "\(String(describing: weather?.high[indexPath.row] ?? 0))/\(String(describing: weather?.low[indexPath.row] ?? 0))"
-        //cell.weatherDescription.textAlignment = .center
-        //cell.weatherDescription.font = UIFont.init(name: "Avenir Next", size: 17)
-        cell.weatherDescription.textColor = .white
-        */
-        
-        /*
-        for subview in cell.contentView.subviews {
-            subview.removeFromSuperview()
-        }
-        
-        let dayLabel = UILabel.init(frame: CGRect.init(x: 0, y: 0, width: 132, height: 21))
-        dayLabel.text = "Mon"
-        dayLabel.textAlignment = .center
-        dayLabel.font = UIFont.init(name: "Avenir Next Demi Bold", size: 19)
-        dayLabel.textColor = .white
-        cell.addSubview(dayLabel)
-        
-        let weatherImageView = UIImageView.init(frame: CGRect.init(x: 21, y: 21, width: 90, height: 90))
-        let newSymbol = Symbols.init()
-        let newWeather = newSymbol.convertSymbol(name: weather?.iconID[indexPath.row] ?? "")
-        weatherImageView.image = newWeather
-        cell.addSubview(weatherImageView)
-        
-        let descLabel = UILabel.init(frame: CGRect.init(x: 0, y: 111, width: 132, height: 21))
-        descLabel.text = "\(String(describing: weather?.high[indexPath.row] ?? 0))/\(String(describing: weather?.low[indexPath.row] ?? 0))"
-        descLabel.textAlignment = .center
-        descLabel.font = UIFont.init(name: "Avenir Next", size: 17)
-        descLabel.textColor = .white
-        cell.addSubview(descLabel)*/
+        cell.weatherDescription.text = "\(numberAsString(num: weather?.high[indexPath.row] ?? 0))/\(numberAsString(num: weather?.low[indexPath.row] ?? 0))"
     
         return cell
     }

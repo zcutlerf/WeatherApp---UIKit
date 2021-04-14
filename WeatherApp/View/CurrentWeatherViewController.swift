@@ -26,8 +26,9 @@ class CurrentWeatherViewController: UIViewController {
         
         
         let newSymbol = Symbols.init()
-        let sunny = newSymbol.convertSymbol(name: "wi-day-sunny")
+        let sunny = newSymbol.convertSymbol(name: "wi-day-sunny", isItDaytime: true)
         currentWeatherImageView.image = sunny
+        currentWeatherImageView.layer.minificationFilter = .trilinear
     }
 
 }
