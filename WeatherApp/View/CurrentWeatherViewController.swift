@@ -33,9 +33,15 @@ class CurrentWeatherViewController: UIViewController {
         currentWeatherImageView.layer.minificationFilter = .trilinear
         
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(changeTemp))
+        let tapGesture1 = UITapGestureRecognizer(target: self, action: #selector(changeTemp))
+        let tapGesture2 = UITapGestureRecognizer(target: self, action: #selector(changeTemp))
         
         currentWeatherTemperature.isUserInteractionEnabled = true
         currentWeatherTemperature.addGestureRecognizer(tapGesture)
+        currentWeatherLow.isUserInteractionEnabled = true
+        currentWeatherLow.addGestureRecognizer(tapGesture1)
+        currentWeatherHigh.isUserInteractionEnabled = true
+        currentWeatherHigh.addGestureRecognizer(tapGesture2)
     }
     
     @objc func changeTemp(){
