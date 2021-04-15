@@ -14,6 +14,7 @@ class Location: Mappable {
     var longitude: Double?
     
     required init?(map: Map) {
+        city = "New York"
     }
     
     func mapping(map: Map) {

@@ -8,10 +8,12 @@
 import UIKit
 
 class CityBarViewController: UIViewController {
+    
+    weak var delegate: ChangeCityDelegate?
 
     @IBOutlet weak var cityNameLabel: UILabel!
-
-    @IBOutlet weak var cityChangeImageView: UIImageView!
+    
+    @IBOutlet weak var cityChangeButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,10 +21,21 @@ class CityBarViewController: UIViewController {
         self.view.backgroundColor = .clear
         cityNameLabel.textColor = .white
         
-        let arrow = UIImage(named: "oval-arrow")
-        cityChangeImageView.image = arrow
+        cityChangeButton.setTitle("", for: .normal)
         
+        let arrow = UIImage(named: "oval-arrow")
+        cityChangeButton.setImage(arrow, for: .normal)
+        
+        cityChangeButton.addTarget(self, action: #selector(switchView), for: .touchUpInside)
     }
     
+    @objc func switchView(){
+        delegate?.switchToChangeCity()
+    }
+    
+}
 
+protocol ChangeCityDelegate: NSObject {
+    func switchToChangeCity()
+    func switchBackToMain(city: String)
 }

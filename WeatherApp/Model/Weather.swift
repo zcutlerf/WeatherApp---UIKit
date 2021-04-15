@@ -11,13 +11,17 @@ import ObjectMapper
 class Weather: Mappable {
     
     var timezoneOffset: Int?
-    var currentTemp: Float?
-    var feelsLike: Float?
+    var currentTempF: Float?
+    var currentTempC: Float?
+    var feelsLikeF: Float?
+    var feelsLikeC: Float?
     var iconID_current: String?
     var description_current: String?
     
-    var low: [Float]
-    var high: [Float]
+    var lowF: [Float]
+    var highF: [Float]
+    var lowC: [Float]
+    var highC: [Float]
     var iconID: [String]
     
     var isItDaytime: Bool
@@ -27,8 +31,10 @@ class Weather: Mappable {
     
     
     required init?(map: Map) {
-        self.low = [0,0,0,0,0,0,0,0]
-        self.high = [0,0,0,0,0,0,0,0]
+        self.lowF = [0,0,0,0,0,0,0,0]
+        self.highF = [0,0,0,0,0,0,0,0]
+        self.lowC = [0,0,0,0,0,0,0,0]
+        self.highC = [0,0,0,0,0,0,0,0]
         self.iconID = ["","","","","","","",""]
         
         self.isItDaytime = true
@@ -37,8 +43,8 @@ class Weather: Mappable {
     //use this to filter JSON (from postman outline) into spots
     func mapping(map: Map) {
         timezoneOffset  <- map["timezone_offset"]
-        currentTemp     <- map["current.temp"]
-        feelsLike       <- map["current.feels_like"]
+        currentTempF     <- map["current.temp"]
+        feelsLikeF       <- map["current.feels_like"]
         iconID_current  <- map["current.weather.0.description"]
         description_current  <- map["current.weather.0.main"]
         
@@ -52,37 +58,45 @@ class Weather: Mappable {
             isItDaytime = false
         }
         
-        low[0]             <- map["daily.0.temp.min"]
-        high[0]            <- map["daily.0.temp.max"]
+        lowF[0]             <- map["daily.0.temp.min"]
+        highF[0]            <- map["daily.0.temp.max"]
         iconID[0]          <- map["daily.0.weather.0.description"]
         
-        low[1]            <- map["daily.1.temp.min"]
-        high[1]           <- map["daily.1.temp.max"]
+        lowF[1]            <- map["daily.1.temp.min"]
+        highF[1]           <- map["daily.1.temp.max"]
         iconID[1]          <- map["daily.1.weather.0.description"]
         
-        low[2]            <- map["daily.2.temp.min"]
-        high[2]           <- map["daily.2.temp.max"]
+        lowF[2]            <- map["daily.2.temp.min"]
+        highF[2]           <- map["daily.2.temp.max"]
         iconID[2]          <- map["daily.2.weather.0.description"]
         
-        low[3]            <- map["daily.3.temp.min"]
-        high[3]           <- map["daily.3.temp.max"]
+        lowF[3]            <- map["daily.3.temp.min"]
+        highF[3]           <- map["daily.3.temp.max"]
         iconID[3]          <- map["daily.3.weather.0.description"]
         
-        low[4]            <- map["daily.4.temp.min"]
-        high[4]           <- map["daily.4.temp.max"]
+        lowF[4]            <- map["daily.4.temp.min"]
+        highF[4]           <- map["daily.4.temp.max"]
         iconID[4]          <- map["daily.4.weather.0.description"]
         
-        low[5]            <- map["daily.5.temp.min"]
-        high[5]           <- map["daily.5.temp.max"]
+        lowF[5]            <- map["daily.5.temp.min"]
+        highF[5]           <- map["daily.5.temp.max"]
         iconID[5]          <- map["daily.5.weather.0.description"]
         
-        low[6]            <- map["daily.6.temp.min"]
-        high[6]           <- map["daily.6.temp.max"]
+        lowF[6]            <- map["daily.6.temp.min"]
+        highF[6]           <- map["daily.6.temp.max"]
         iconID[6]          <- map["daily.6.weather.0.description"]
         
-        low[7]            <- map["daily.7.temp.min"]
-        high[7]           <- map["daily.7.temp.max"]
+        lowF[7]            <- map["daily.7.temp.min"]
+        highF[7]           <- map["daily.7.temp.max"]
         iconID[7]          <- map["daily.7.weather.0.description"]
+        
+        currentTempC = ((currentTempF ?? 32) - 32) * (5/9)
+        feelsLikeC = ((feelsLikeF ?? 32) - 32) * (5/9)
+        
+        for i in 0..<8 {
+            lowC[i] = (lowF[i] - 32) * (5/9)
+            highC[i] = (highF[i] - 32) * (5/9)
+        }
     }
     
 }

@@ -53,7 +53,11 @@ class FutureWeatherViewController: UIViewController, UICollectionViewDelegate, U
         let newWeather = newSymbol.convertSymbol(name: weather?.iconID[indexPath.row] ?? "", isItDaytime: true)
         cell.weatherImageView.image = newWeather
         
-        cell.weatherDescription.text = "\(numberAsString(num: weather?.high[indexPath.row] ?? 0))/\(numberAsString(num: weather?.low[indexPath.row] ?? 0))"
+        if(fahrenheit == true){
+            cell.weatherDescription.text = "\(numberAsString(num: weather?.highF[indexPath.row] ?? 0))/\(numberAsString(num: weather?.lowF[indexPath.row] ?? 0))"
+        } else {
+            cell.weatherDescription.text = "\(numberAsString(num: weather?.highC[indexPath.row] ?? 0))/\(numberAsString(num: weather?.lowC[indexPath.row] ?? 0))"
+        }
     
         return cell
     }

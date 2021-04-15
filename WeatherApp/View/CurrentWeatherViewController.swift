@@ -8,6 +8,8 @@
 import UIKit
 
 class CurrentWeatherViewController: UIViewController {
+    
+    weak var delegate: TempChangeDelegate?
 
     @IBOutlet weak var currentWeatherImageView: UIImageView!
     @IBOutlet weak var currentWeatherTemperature: UILabel!
@@ -29,6 +31,27 @@ class CurrentWeatherViewController: UIViewController {
         let sunny = newSymbol.convertSymbol(name: "wi-day-sunny", isItDaytime: true)
         currentWeatherImageView.image = sunny
         currentWeatherImageView.layer.minificationFilter = .trilinear
+        
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(changeTemp))
+        
+        currentWeatherTemperature.isUserInteractionEnabled = true
+        currentWeatherTemperature.addGestureRecognizer(tapGesture)
+    }
+    
+    @objc func changeTemp(){
+        delegate?.changeTemperature()
+    }
+    
+    func changeTempLocal(){
+        if(fahrenheit == true){
+            
+        } else {
+            
+        }
     }
 
+}
+
+protocol TempChangeDelegate: NSObject {
+    func changeTemperature()
 }
