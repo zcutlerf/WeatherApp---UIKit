@@ -13,7 +13,10 @@ import Alamofire
 class WeatherService {
     
     static func getLocationByCity(city: String, completion: @escaping(Swift.Result<Data, Error>) -> Void) {
-        let url = "https://api.openweathermap.org/data/2.5/weather?q=\(city.replacingOccurrences(of: " ", with: "%20"))&appid=85412364be93aebf863edc1fa09e3448"
+        var cityString = city
+        cityString = cityString.replacingOccurrences(of: " ", with: "%20")
+        cityString = cityString.replacingOccurrences(of: ",", with: "%2C")
+        let url = "https://api.openweathermap.org/data/2.5/weather?q=\(cityString)&appid=85412364be93aebf863edc1fa09e3448"
         let request = AF.request(url)
         
         request.responseJSON { (response) in
@@ -40,4 +43,64 @@ class WeatherService {
         }
     }
     
+    func convertStateCode(subString: Substring) -> Substring {
+//        let stateDictionary: [Substring : Substring] = [
+//        "AK" : "Alaska",
+//        "AL" : "Alabama",
+//        "AR" : "Arkansas",
+//        "AS" : "American Samoa",
+//        "AZ" : "Arizona",
+//        "CA" : "California",
+//        "CO" : "Colorado",
+//        "CT" : "Connecticut",
+//        "DC" : "District of Columbia",
+//        "DE" : "Delaware",
+//        "FL" : "Florida",
+//        "GA" : "Georgia",
+//        "GU" : "Guam",
+//        "HI" : "Hawaii",
+//        "IA" : "Iowa",
+//        "ID" : "Idaho",
+//        "IL" : "Illinois",
+//        "IN" : "Indiana",
+//        "KS" : "Kansas",
+//        "KY" : "Kentucky",
+//        "LA" : "Louisiana",
+//        "MA" : "Massachusetts",
+//        "MD" : "Maryland",
+//        "ME" : "Maine",
+//        "MI" : "Michigan",
+//        "MN" : "Minnesota",
+//        "MO" : "Missouri",
+//        "MS" : "Mississippi",
+//        "MT" : "Montana",
+//        "NC" : "North Carolina",
+//        "ND" : "North Dakota",
+//        "NE" : "Nebraska",
+//        "NH" : "New Hampshire",
+//        "NJ" : "New Jersey",
+//        "NM" : "New Mexico",
+//        "NV" : "Nevada",
+//        "NY" : "New York",
+//        "OH" : "Ohio",
+//        "OK" : "Oklahoma",
+//        "OR" : "Oregon",
+//        "PA" : "Pennsylvania",
+//        "PR" : "Puerto Rico",
+//        "RI" : "Rhode Island",
+//        "SC" : "South Carolina",
+//        "SD" : "South Dakota",
+//        "TN" : "Tennessee",
+//        "TX" : "Texas",
+//        "UT" : "Utah",
+//        "VA" : "Virginia",
+//        "VI" : "Virgin Islands",
+//        "VT" : "Vermont",
+//        "WA" : "Washington",
+//        "WI" : "Wisconsin",
+//        "WV" : "West Virginia",
+//        "WY" : "Wyoming"]
+        
+        return subString
+    }
 }

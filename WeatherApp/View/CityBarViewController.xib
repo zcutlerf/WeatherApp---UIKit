@@ -10,7 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CityBarViewController" customModule="WeatherApp" customModuleProvider="target">
             <connections>
-                <outlet property="cityChangeImageView" destination="MmM-bC-gfp" id="hUG-7c-k2b"/>
+                <outlet property="cityChangeButton" destination="uEV-57-TSl" id="Vwd-4W-U2v"/>
                 <outlet property="cityNameLabel" destination="px3-kR-TNK" id="aep-JJ-Jhw"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -29,22 +29,23 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="MmM-bC-gfp">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uEV-57-TSl">
                     <rect key="frame" x="330" y="44" width="64" height="64"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="64" id="1lQ-eS-K52"/>
-                        <constraint firstAttribute="height" constant="64" id="oF9-SU-BKk"/>
+                        <constraint firstAttribute="height" constant="64" id="Tkv-w3-HKE"/>
+                        <constraint firstAttribute="width" constant="64" id="y3V-Vc-95M"/>
                     </constraints>
-                </imageView>
+                    <state key="normal" title="-&gt;"/>
+                </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="MmM-bC-gfp" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="B5j-5w-qLz"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="MmM-bC-gfp" secondAttribute="trailing" constant="20" id="b4x-em-cIx"/>
+                <constraint firstItem="uEV-57-TSl" firstAttribute="leading" secondItem="px3-kR-TNK" secondAttribute="trailing" constant="8" symbolic="YES" id="2fp-i9-AjJ"/>
+                <constraint firstItem="uEV-57-TSl" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="BfB-kM-D6g"/>
                 <constraint firstItem="px3-kR-TNK" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="n8e-Ao-O1J"/>
-                <constraint firstItem="MmM-bC-gfp" firstAttribute="leading" secondItem="px3-kR-TNK" secondAttribute="trailing" constant="8" symbolic="YES" id="nYr-SV-KfM"/>
                 <constraint firstItem="px3-kR-TNK" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="ntw-mV-YBn"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="uEV-57-TSl" secondAttribute="trailing" constant="20" id="wM6-hF-Fcl"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <point key="canvasLocation" x="-178.2608695652174" y="-248.4375"/>

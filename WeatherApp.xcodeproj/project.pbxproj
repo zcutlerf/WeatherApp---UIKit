@@ -11,6 +11,8 @@
 		4DD3023927E94F5F3F4A1666 /* Pods_WeatherAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A063F3F92B7DF51C0AEC35C3 /* Pods_WeatherAppTests.framework */; };
 		A01C4DE6D1EC6839ABDB094E /* Pods_WeatherApp_WeatherAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E23AEB03D572C6C4A7C0A7A /* Pods_WeatherApp_WeatherAppUITests.framework */; };
 		C8048BB6261FDFD7001C3F59 /* Numbers.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8048BB5261FDFD7001C3F59 /* Numbers.swift */; };
+		C8048BC526276034001C3F59 /* ChangeCityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8048BC326276034001C3F59 /* ChangeCityViewController.swift */; };
+		C8048BC626276034001C3F59 /* ChangeCityViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C8048BC426276034001C3F59 /* ChangeCityViewController.xib */; };
 		C88FF44D2609765A001B0B7F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C88FF44C2609765A001B0B7F /* AppDelegate.swift */; };
 		C88FF44F2609765A001B0B7F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C88FF44E2609765A001B0B7F /* SceneDelegate.swift */; };
 		C88FF4512609765A001B0B7F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C88FF4502609765A001B0B7F /* ViewController.swift */; };
@@ -58,6 +60,8 @@
 		4E479FF6292C9156D9B990E7 /* Pods-WeatherAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeatherAppTests.release.xcconfig"; path = "Target Support Files/Pods-WeatherAppTests/Pods-WeatherAppTests.release.xcconfig"; sourceTree = "<group>"; };
 		A063F3F92B7DF51C0AEC35C3 /* Pods_WeatherAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WeatherAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C8048BB5261FDFD7001C3F59 /* Numbers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Numbers.swift; sourceTree = "<group>"; };
+		C8048BC326276034001C3F59 /* ChangeCityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeCityViewController.swift; sourceTree = "<group>"; };
+		C8048BC426276034001C3F59 /* ChangeCityViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChangeCityViewController.xib; sourceTree = "<group>"; };
 		C88FF4492609765A001B0B7F /* WeatherApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeatherApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C88FF44C2609765A001B0B7F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C88FF44E2609765A001B0B7F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -219,6 +223,8 @@
 				C8E123172616CCEA002F79CB /* FutureWeatherViewController.xib */,
 				C8E12325261B9D47002F79CB /* FutureWeatherCollectionViewCell.swift */,
 				C8E12326261B9D47002F79CB /* FutureWeatherCollectionViewCell.xib */,
+				C8048BC326276034001C3F59 /* ChangeCityViewController.swift */,
+				C8048BC426276034001C3F59 /* ChangeCityViewController.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -350,6 +356,7 @@
 				C8E123192616CCEA002F79CB /* FutureWeatherViewController.xib in Resources */,
 				C8E123122616CCD9002F79CB /* CurrentWeatherViewController.xib in Resources */,
 				C8E12328261B9D47002F79CB /* FutureWeatherCollectionViewCell.xib in Resources */,
+				C8048BC626276034001C3F59 /* ChangeCityViewController.xib in Resources */,
 				C88FF4592609765B001B0B7F /* LaunchScreen.storyboard in Resources */,
 				C88FF4562609765B001B0B7F /* Assets.xcassets in Resources */,
 				C88FF4542609765A001B0B7F /* Main.storyboard in Resources */,
@@ -485,6 +492,7 @@
 				C88FF4512609765A001B0B7F /* ViewController.swift in Sources */,
 				C88FF44D2609765A001B0B7F /* AppDelegate.swift in Sources */,
 				C8E123182616CCEA002F79CB /* FutureWeatherViewController.swift in Sources */,
+				C8048BC526276034001C3F59 /* ChangeCityViewController.swift in Sources */,
 				C8E123112616CCD9002F79CB /* CurrentWeatherViewController.swift in Sources */,
 				C8E12321261AA579002F79CB /* Symbols.swift in Sources */,
 				C88FF44F2609765A001B0B7F /* SceneDelegate.swift in Sources */,
