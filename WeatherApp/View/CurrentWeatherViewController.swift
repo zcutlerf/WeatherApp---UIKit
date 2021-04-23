@@ -44,16 +44,9 @@ class CurrentWeatherViewController: UIViewController {
         currentWeatherHigh.addGestureRecognizer(tapGesture2)
     }
     
+    //calls delegate (ViewController) to change the temperature view between F and C
     @objc func changeTemp(){
         delegate?.changeTemperature()
-    }
-    
-    func changeTempLocal(){
-        if(fahrenheit == true){
-            
-        } else {
-            
-        }
     }
 
 }

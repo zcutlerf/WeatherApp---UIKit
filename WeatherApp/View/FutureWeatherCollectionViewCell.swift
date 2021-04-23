@@ -7,6 +7,7 @@
 
 import UIKit
 
+//Custom collection view cell for 7 day forecast
 class FutureWeatherCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var dayLabel: UILabel!

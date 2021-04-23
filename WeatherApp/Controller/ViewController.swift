@@ -43,6 +43,7 @@ class ViewController: UIViewController, ChangeCityDelegate, TempChangeDelegate {
         
     }
     
+    //calls WeatherService to return json from OpenWeather's API
     func getWeather(city: String){
         //first get the latitude and longitude of the city
         WeatherService.getLocationByCity(city: city) { (result: Result<Data, Error>) in
@@ -102,7 +103,7 @@ class ViewController: UIViewController, ChangeCityDelegate, TempChangeDelegate {
         view.addSubview(futureWeatherVC.view)
     }
     
-    //update the values on the app, like with a new city
+    //update the values on the app, when a new location is called
     func updateWeather(){
         cityBarVC.cityNameLabel.text = location?.city
         
@@ -146,7 +147,8 @@ class ViewController: UIViewController, ChangeCityDelegate, TempChangeDelegate {
         currentWeatherVC.view.isHidden = true
         futureWeatherVC.view.isHidden = true
     }
-    
+    //called by ChangeCityViewController when new city has been specified
+    //gets weather for new city and reloads controllers
     func switchBackToMain(city: String) {
         getWeather(city: city)
         futureWeatherVC.futureWeatherCollectionView.reloadData()

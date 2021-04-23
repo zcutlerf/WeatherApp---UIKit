@@ -7,7 +7,8 @@
 
 import UIKit
 
-class ChangeCityViewController: UIViewController {
+//View Controller for selecting a new city
+class ChangeCityViewController: UIViewController, UITextFieldDelegate {
     
     weak var delegate: ChangeCityDelegate?
 
@@ -25,10 +26,25 @@ class ChangeCityViewController: UIViewController {
         updateButton.setTitleColor(.lightGray, for: .highlighted)
 
         updateButton.addTarget(self, action: #selector(switchView), for: .touchUpInside)
+        
+        newCityTextField.delegate = self
+        
+        let exitTap = UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing))
+        view.addGestureRecognizer(exitTap)
+        //let updateTap = UITapGestureRecognizer(target: updateButton, action: #selector(UIView.endEditing))
+        //view.addGestureRecognizer(updateTap)
     }
     
+    //calls delegate (ViewController) to switch back to the home screen
     @objc func switchView(){
+        newCityTextField.resignFirstResponder()
         delegate?.switchBackToMain(city: newCityTextField.text ?? "New York")
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        switchView()
+        return true
     }
 
 }

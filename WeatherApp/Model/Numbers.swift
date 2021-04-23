@@ -7,6 +7,7 @@
 
 import Foundation
 
+//Helper functions to format temperatures without decimals
 func numberAsString(num: Float) -> String {
     let formatter = NumberFormatter()
     formatter.numberStyle = .none

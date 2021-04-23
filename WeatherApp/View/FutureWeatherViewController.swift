@@ -25,7 +25,6 @@ class FutureWeatherViewController: UIViewController, UICollectionViewDelegate, U
         futureWeatherCollectionView.collectionViewLayout = layout
         futureWeatherCollectionView.isScrollEnabled = true
         futureWeatherCollectionView.frame = CGRect.init(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 137)
-        //futureWeatherCollectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "futureWeatherCell")
         futureWeatherCollectionView.register(UINib.init(nibName: "FutureWeatherCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "futureWeatherCell")
         futureWeatherCollectionView.backgroundColor = .clear
         

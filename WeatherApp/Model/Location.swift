@@ -8,6 +8,7 @@
 import Foundation
 import ObjectMapper
 
+//Location stores basic info about city. Provides lat/lon for Weather type.
 class Location: Mappable {
     var city: String?
     var latitude: Double?

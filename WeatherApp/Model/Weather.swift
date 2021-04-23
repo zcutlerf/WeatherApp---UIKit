@@ -8,6 +8,7 @@
 import Foundation
 import ObjectMapper
 
+//Stores all weather info for a location
 class Weather: Mappable {
     
     var timezoneOffset: Int?
@@ -58,42 +59,14 @@ class Weather: Mappable {
             isItDaytime = false
         }
         
-        lowF[0]             <- map["daily.0.temp.min"]
-        highF[0]            <- map["daily.0.temp.max"]
-        iconID[0]          <- map["daily.0.weather.0.description"]
-        
-        lowF[1]            <- map["daily.1.temp.min"]
-        highF[1]           <- map["daily.1.temp.max"]
-        iconID[1]          <- map["daily.1.weather.0.description"]
-        
-        lowF[2]            <- map["daily.2.temp.min"]
-        highF[2]           <- map["daily.2.temp.max"]
-        iconID[2]          <- map["daily.2.weather.0.description"]
-        
-        lowF[3]            <- map["daily.3.temp.min"]
-        highF[3]           <- map["daily.3.temp.max"]
-        iconID[3]          <- map["daily.3.weather.0.description"]
-        
-        lowF[4]            <- map["daily.4.temp.min"]
-        highF[4]           <- map["daily.4.temp.max"]
-        iconID[4]          <- map["daily.4.weather.0.description"]
-        
-        lowF[5]            <- map["daily.5.temp.min"]
-        highF[5]           <- map["daily.5.temp.max"]
-        iconID[5]          <- map["daily.5.weather.0.description"]
-        
-        lowF[6]            <- map["daily.6.temp.min"]
-        highF[6]           <- map["daily.6.temp.max"]
-        iconID[6]          <- map["daily.6.weather.0.description"]
-        
-        lowF[7]            <- map["daily.7.temp.min"]
-        highF[7]           <- map["daily.7.temp.max"]
-        iconID[7]          <- map["daily.7.weather.0.description"]
-        
         currentTempC = ((currentTempF ?? 32) - 32) * (5/9)
         feelsLikeC = ((feelsLikeF ?? 32) - 32) * (5/9)
         
         for i in 0..<8 {
+            lowF[i]             <- map["daily.\(i).temp.min"]
+            highF[i]            <- map["daily.\(i).temp.max"]
+            iconID[i]          <- map["daily.\(i).weather.0.description"]
+            
             lowC[i] = (lowF[i] - 32) * (5/9)
             highC[i] = (highF[i] - 32) * (5/9)
         }

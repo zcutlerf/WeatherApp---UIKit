@@ -8,6 +8,7 @@
 import Foundation
 import UIKit
 
+//Manages symbols for all weather descriptions returned by OpenWeather
 class Symbols {
     func convertSymbol(name: String, isItDaytime: Bool) -> UIImage {
         var image = UIImage.init()

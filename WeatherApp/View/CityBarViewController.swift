@@ -29,6 +29,7 @@ class CityBarViewController: UIViewController {
         cityChangeButton.addTarget(self, action: #selector(switchView), for: .touchUpInside)
     }
     
+    //calls delegate (ViewController) to switch to ChangeCityViewController
     @objc func switchView(){
         delegate?.switchToChangeCity()
     }
